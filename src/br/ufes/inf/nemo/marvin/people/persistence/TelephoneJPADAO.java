@@ -29,12 +29,6 @@ public class TelephoneJPADAO extends BaseJPADAO<Telephone> implements TelephoneD
 	@PersistenceContext
 	private EntityManager entityManager;
 
-	/** @see br.ufes.inf.nemo.util.ejb3.persistence.BaseDAO#getDomainClass() */
-	@Override
-	public Class<Telephone> getDomainClass() {
-		return Telephone.class;
-	}
-
 	/** @see br.ufes.inf.nemo.util.ejb3.persistence.BaseJPADAO#getEntityManager() */
 	@Override
 	protected EntityManager getEntityManager() {

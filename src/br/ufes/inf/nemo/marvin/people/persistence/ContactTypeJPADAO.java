@@ -29,12 +29,6 @@ public class ContactTypeJPADAO extends BaseJPADAO<ContactType> implements Contac
 	@PersistenceContext
 	private EntityManager entityManager;
 
-	/** @see br.ufes.inf.nemo.util.ejb3.persistence.BaseDAO#getDomainClass() */
-	@Override
-	public Class<ContactType> getDomainClass() {
-		return ContactType.class;
-	}
-
 	/** @see br.ufes.inf.nemo.util.ejb3.persistence.BaseJPADAO#getEntityManager() */
 	@Override
 	protected EntityManager getEntityManager() {
