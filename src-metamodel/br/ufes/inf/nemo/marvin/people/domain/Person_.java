@@ -1,18 +1,12 @@
 package br.ufes.inf.nemo.marvin.people.domain;
 
+import br.ufes.inf.nemo.jbutler.ejb.persistence.PersistentObjectSupport_;
 import java.util.Date;
-
+import javax.annotation.Generated;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-import br.ufes.inf.nemo.jbutler.ejb.persistence.PersistentObjectSupport_;
-
-/**
- * Meta-model for the Person domain class, which allows DAOs to perform programmatic queries using JPA2's Criteria API.
- * 
- * @author Vitor E. Silva Souza (vitorsouza@gmail.com)
- * @see br.ufes.inf.nemo.marvin.people.domain.Person
- */
+@Generated(value="Dali", date="2016-04-17T15:51:32.691-0300")
 @StaticMetamodel(Person.class)
 public class Person_ extends PersistentObjectSupport_ {
 	public static volatile SingularAttribute<Person, String> name;
