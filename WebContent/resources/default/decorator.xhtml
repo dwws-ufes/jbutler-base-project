@@ -128,7 +128,7 @@
 						</li>
 						</h:panelGroup>
 						
-						<!-- FIXME: hidden - User Account Menu -->
+						<!-- User Account Menu -->
 						<h:panelGroup rendered="#{sessionController.loggedIn}">
 						<li class="dropdown user user-menu">
 							<!-- Menu Toggle Button --> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <!-- The user image in the navbar--> <img
@@ -257,7 +257,7 @@
 			<!-- Main content -->
 			<section class="content">
 				<!-- Global messages: -->
-				<h:form id="globalMessages" rendered="false">
+				<h:form id="globalMessages">
 					<p:growl id="messages" globalOnly="true" showSummary="true" showDetail="true" sticky="true" />
 				</h:form>
 				
