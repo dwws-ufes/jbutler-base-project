@@ -36,13 +36,14 @@
 
 			<h:panelGroup rendered="#{! manage${Entities}Controller.readOnly}">
 				<ui:decorate template="/resources/#{coreInfo.decorator}/formbuttonpanel-02.xhtml">
-					<p:commandButton action="#{manage${Entities}Controller.list}" value="#{msgs['jbutler.crud.button.cancel']}" immediate="true" icon="fa fa-fw fa-close" />
-					<p:commandButton action="#{manage${Entities}Controller.save}" value="#{msgs['jbutler.crud.button.save']}" update=":form :globalMessages" icon="fa fa-fw fa-save" />
+					<p:commandButton id="cancelButton" action="#{manage${Entities}Controller.list}" value="#{msgs['jbutler.crud.button.cancel']}" immediate="true" icon="fa fa-fw fa-close" />
+					<p:commandButton id="saveButton" action="#{manage${Entities}Controller.save}" value="#{msgs['jbutler.crud.button.save']}" update=":form :globalMessages" icon="fa fa-fw fa-save" />
+					<p:defaultCommand target="saveButton" />
 				</ui:decorate>
 			</h:panelGroup>
 			<h:panelGroup rendered="#{manage${Entities}Controller.readOnly}">
 				<ui:decorate template="/resources/#{coreInfo.decorator}/formbuttonpanel-01.xhtml">
-					<p:commandButton action="#{manage${Entities}Controller.list}" value="#{msgs['jbutler.crud.button.back']}" immediate="true" icon="fa fa-fw fa-arrow-circle-left" />
+					<p:commandButton id="backButton" action="#{manage${Entities}Controller.list}" value="#{msgs['jbutler.crud.button.back']}" immediate="true" icon="fa fa-fw fa-arrow-circle-left" />
 				</ui:decorate>
 			</h:panelGroup>
 		</ui:decorate>
