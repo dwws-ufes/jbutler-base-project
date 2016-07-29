@@ -25,6 +25,7 @@
 		<ui:decorate template="/resources/#{coreInfo.decorator}/form.xhtml">
 			<ui:param name="formName" value="form" />
 			<ui:param name="formLabel" value="#{msgsCore['manage${Entities}.form.title']}" />
+			<p:hotkey bind="#{msgs['jbutler.crud.hotkey.focusFirstField']}" handler="findObjectById('form:${attribute1}').focus();" />
 
 			<ui:decorate template="/resources/#{coreInfo.decorator}/formfield.xhtml">
 				<ui:param name="fieldName" value="${attribute1}" />
@@ -39,11 +40,13 @@
 					<p:commandButton id="cancelButton" action="#{manage${Entities}Controller.list}" value="#{msgs['jbutler.crud.button.cancel']}" immediate="true" icon="fa fa-fw fa-close" />
 					<p:commandButton id="saveButton" action="#{manage${Entities}Controller.save}" value="#{msgs['jbutler.crud.button.save']}" update=":form :globalMessages" icon="fa fa-fw fa-save" />
 					<p:defaultCommand target="saveButton" />
+					<p:hotkey bind="#{msgs['jbutler.crud.hotkey.backToList']}" action="#{manage${Entities}Controller.list}" immediate="true" />
 				</ui:decorate>
 			</h:panelGroup>
 			<h:panelGroup rendered="#{manage${Entities}Controller.readOnly}">
 				<ui:decorate template="/resources/#{coreInfo.decorator}/formbuttonpanel-01.xhtml">
 					<p:commandButton id="backButton" action="#{manage${Entities}Controller.list}" value="#{msgs['jbutler.crud.button.back']}" immediate="true" icon="fa fa-fw fa-arrow-circle-left" />
+					<p:hotkey bind="#{msgs['jbutler.crud.hotkey.backToList']}" action="#{manage${Entities}Controller.list}" immediate="true" />
 				</ui:decorate>
 			</h:panelGroup>
 		</ui:decorate>
