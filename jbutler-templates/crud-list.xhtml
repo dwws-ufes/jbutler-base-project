@@ -18,7 +18,6 @@
 		<h:panelGroup id="filterBar" rendered="#{(not empty manage${Entities}Controller.filters)}">
 			<ui:decorate template="/resources/#{coreInfo.decorator}/form-nobox.xhtml">
 				<ui:param name="formName" value="filterForm" />
-				<p:focus />
 
 				<ui:decorate template="/resources/#{coreInfo.decorator}/formfield-filter.xhtml">
 					<p:selectOneMenu id="filter" required="true" value="#{manage${Entities}Controller.filterKey}">
@@ -32,10 +31,10 @@
 					<p:commandButton action="#{manage${Entities}Controller.filter}" value="#{msgs['jbutler.crud.button.filter']}" process="@form" update=":listingForm @form" icon="fa fa-fw fa-search" />
 					<p:commandButton action="#{manage${Entities}Controller.cancelFilter}" value="#{msgs['jbutler.crud.button.cancelFilter']}" process="@form" update=":listingForm @form" icon="fa fa-fw fa-close" rendered="#{manage${Entities}Controller.filtering}" />
 					<p:commandButton action="#{manage${Entities}Controller.clearFilter}" value="#{msgs['jbutler.crud.button.clearFilter']}" process="@form" update=":listingForm @form" icon="fa fa-fw fa-eraser" rendered="#{not manage${Entities}Controller.filtering}" />
+				</ui:decorate>
 				<p:hotkey bind="#{msgs['jbutler.crud.hotkey.filterFocus']}" handler="if (findObjectById('filterForm:filterText') != null) findObjectById('filterForm:filterText').focus(); else findObjectById('filterForm:filterSelect').focus();" />
 				<p:hotkey bind="#{msgs['jbutler.crud.hotkey.clearFilter']}" action="#{manage${Entities}Controller.cancelFilter}" process="@form" update=":listingForm @form" rendered="#{manage${Entities}Controller.filtering}" />
 				<p:hotkey bind="#{msgs['jbutler.crud.hotkey.clearFilter']}" action="#{manage${Entities}Controller.clearFilter}" process="@form" update=":listingForm @form" rendered="#{not manage${Entities}Controller.filtering}" />
-				</ui:decorate>
 			</ui:decorate>
 		</h:panelGroup>
 		
