@@ -97,7 +97,7 @@
 			            </p:dataList>
 						<ui:decorate template="/resources/#{coreInfo.decorator}/formbuttonpanel-02.xhtml">
 							<p:commandButton action="#{manage${Entities}Controller.cancelDeletion}" value="#{msgs['jbutler.crud.button.cancelDeletion']}" icon="fa fa-fw fa-close" process="@this" update=":listingForm" />
-							<p:commandButton action="#{manage${Entities}Controller.delete}" value="#{msgs['jbutler.crud.button.confirmDeletion']}" icon="fa fa-fw fa-trash-o" ajax="false" />
+							<p:commandButton action="#{manage${Entities}Controller.delete}" value="#{msgs['jbutler.crud.button.confirmDeletion']}" icon="fa fa-fw fa-trash-o" process="@this" update=":globalMessages :listingForm" />
 						</ui:decorate>
 						<p:hotkey bind="#{msgs['jbutler.crud.hotkey.cancelDeletion']}" action="#{manage${Entities}Controller.cancelDeletion}" process="@this" update=":listingForm" />
 						<p:hotkey bind="#{msgs['jbutler.crud.hotkey.confirmDeletion']}" action="#{manage${Entities}Controller.delete}" ajax="false" />
